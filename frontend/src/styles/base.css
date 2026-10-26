@@ -1,10 +1,15 @@
 :root {
   --color-bg: #ffffff;
+  --color-surface: #f6f8fb;
+  --color-border: #d9e0ea;
   --color-text: #1f2933;
   --color-muted: #616e7c;
   --color-accent: #2563eb;
+  --color-accent-dark: #1d4ed8;
   --color-ok: #15803d;
+  --color-ok-bg: #ecfdf3;
   --color-error: #b91c1c;
+  --color-error-bg: #fef2f2;
 }
 
 * {
@@ -19,24 +24,226 @@ body {
   line-height: 1.6;
 }
 
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--color-accent);
+}
+
 .page {
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.page-message {
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 .subtitle {
+  margin: 0 0 1.5rem;
   color: var(--color-muted);
 }
 
-.status {
+/* 위쪽 메뉴 */
+.topbar {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.topbar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+
+.menu-link {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.menu-link:hover,
+.menu-link.active {
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
+.account {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nickname {
   font-weight: 600;
 }
 
-.status-connected {
-  color: var(--color-ok);
+/* 카드 */
+.card {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-bg);
 }
 
-.status-failed {
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card-link {
+  color: var(--color-text);
+  text-decoration: none;
+  background: var(--color-surface);
+}
+
+.card-link:hover {
+  border-color: var(--color-accent);
+}
+
+.card-link p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* 가입·로그인 */
+.auth-page {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+}
+
+.auth-page > .alert {
+  margin-bottom: 1rem;
+}
+
+.auth-switch {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* 입력 */
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.field input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.field input[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.field-hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.field-error {
+  margin: 0;
+  font-size: 0.875rem;
   color: var(--color-error);
+}
+
+/* 버튼 */
+.button {
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+.button-quiet {
+  padding: 0.25rem 0.6rem;
+  color: var(--color-muted);
+}
+
+/* 안내 */
+.alert {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+}
+
+.alert-error {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.alert-ok {
+  background: var(--color-ok-bg);
+  color: var(--color-ok);
 }
