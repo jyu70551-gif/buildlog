@@ -1,0 +1,42 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1f2933;
+  --color-muted: #616e7c;
+  --color-accent: #2563eb;
+  --color-ok: #15803d;
+  --color-error: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic', sans-serif;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.subtitle {
+  color: var(--color-muted);
+}
+
+.status {
+  font-weight: 600;
+}
+
+.status-connected {
+  color: var(--color-ok);
+}
+
+.status-failed {
+  color: var(--color-error);
+}
